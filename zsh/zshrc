@@ -1,0 +1,43 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+
+source ~/.path
+
+# Dev exports
+export DEV=~/Documents/Developing
+export SCRIPT=$DEV/scripts
+
+# Theos exports
+export THEOS=/opt/theos
+export THEOS_DEVICE_IP=localhost
+export THEOS_DEVICE_PORT=2222
+export PATH=$THEOS/bin:$PATH
+
+# Use 'exa' instead of 'ls'
+alias ls='exa'
+alias la='exa -la'
+alias l='exa -l'
+alias tree='exa -laT'
+
+# Hash aliases
+alias md5sum='gmd5sum'
+alias sha1sum='gsha1sum'
+alias sha256sum='gsha256sum'
+
+alias nasm='/usr/local/Cellar/nasm/2.11.08/bin/nasm'
+
+alias py='python'
+
+source ~/.zshenv
