@@ -1,3 +1,5 @@
+tmux/tmux/plugins/*
+!tmux/tmux/plugins/tpm/
 tmux/tmux/resurrect/*
 
 nvim/nvim/.netrwhist

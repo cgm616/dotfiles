@@ -13,3 +13,6 @@
 [submodule "nvim/nvim/bundle/vim-sensible"]
 	path = nvim/nvim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+[submodule "tmux/tmux/plugins/tpm"]
+	path = tmux/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
