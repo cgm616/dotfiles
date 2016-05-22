@@ -1,3 +1,15 @@
 [submodule "zsh/zprezto"]
 	path = zsh/zprezto
 	url = https://github.com/sorin-ionescu/prezto
+[submodule "nvim/nvim/bundle/lightline.vim"]
+	path = nvim/nvim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "nvim/nvim/bundle/vim-colors-solarized"]
+	path = nvim/nvim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "nvim/nvim/bundle/vim-fugitive"]
+	path = nvim/nvim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "nvim/nvim/bundle/vim-sensible"]
+	path = nvim/nvim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible

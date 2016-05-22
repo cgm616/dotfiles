@@ -1,0 +1,5 @@
+tmux/tmux/resurrect/*
+
+nvim/nvim/.netrwhist
+
+*.backup
