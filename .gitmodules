@@ -16,3 +16,6 @@
 [submodule "tmux/tmux/plugins/tpm"]
 	path = tmux/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "nvim/nvim/bundle/rust.vim"]
+	path = nvim/nvim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim

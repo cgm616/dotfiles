@@ -22,7 +22,7 @@ export SCRIPT=$DEV/scripts
 # Theos exports
 export THEOS=/opt/theos
 export THEOS_DEVICE_IP=localhost
-export THEOS_DEVICE_PORT=2222
+export THEOS_DEVICE_PORT=2000
 export PATH=$THEOS/bin:$PATH
 
 # Use 'exa' instead of 'ls'
@@ -39,3 +39,13 @@ alias sha256sum='gsha256sum'
 alias nasm='/usr/local/Cellar/nasm/2.11.08/bin/nasm'
 
 alias py='python'
+
+alias pg.start='pg_ctl -D /usr/local/var/postgres start > ~/pglog.log'
+alias pg.stop='pg_ctl -D /usr/local/var/postgres stop'
+alias pg.restart='pg_ctl -D /usr/local/var/postgres restart'
+
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+. /Users/cgm616/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

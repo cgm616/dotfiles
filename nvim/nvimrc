@@ -5,11 +5,19 @@ syntax enable
 set background=dark
 colorscheme solarized
 filetype plugin indent on
+set expandtab
 set tabstop=2
 set shiftwidth=2
-set expandtab
 set number
+set colorcolumn=80
 vnoremap . :norm.<CR>
+inoremap jj <Esc>
+inoremap <Esc> <Nop>
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+set noswapfile
 "end Generic config
 
 " Lightline config
@@ -24,7 +32,7 @@ let g:lightline = {
       \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
-      \   'filename': 'LightLineFilename'
+      \   'filename': 'LightLineFilename',
       \ }
       \ }
 
