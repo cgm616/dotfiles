@@ -16,14 +16,12 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
-  'ssh' \
   'tmux' \
   'homebrew' \
   'osx' \
-  'prompt' \
   'syntax-highlighting' \
-  'history-substring-search'
-
+  'history-substring-search' \
+  'prompt'
 
 #
 # Prompt
@@ -39,7 +37,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'id_rsa' 
+# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 
 
 #
 # Syntax Highlighting
@@ -47,13 +45,13 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'line' \
+  'cursor' \
+  'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \

@@ -1,9 +1,13 @@
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -11,19 +15,14 @@ else
   export EDITOR='nvim'
 fi
 
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# SSH and GPG
+export "GPG_TTY=$(tty)"
+export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
 
 source ~/.path
 
 # Dev exports
 export DEV=~/Documents/Developing
-export SCRIPT=$DEV/scripts
-
-# Theos exports
-export THEOS=/opt/theos
-export THEOS_DEVICE_IP=localhost
-export THEOS_DEVICE_PORT=2000
-export PATH=$THEOS/bin:$PATH
 
 # Use 'exa' instead of 'ls'
 alias ls='exa'
@@ -36,7 +35,9 @@ alias md5sum='gmd5sum'
 alias sha1sum='gsha1sum'
 alias sha256sum='gsha256sum'
 
-alias nasm='/usr/local/Cellar/nasm/2.11.08/bin/nasm'
+# Amherst aliases
+alias sshro='ssh ngrabermitchell22@romulus.amherst.edu'
+alias sshre='ssh ngrabermitchell22@remus.amherst.edu'
 
 alias py='python'
 
@@ -47,5 +48,21 @@ alias pg.restart='pg_ctl -D /usr/local/var/postgres restart'
 export GOPATH=$HOME/golang
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH="/usr/local/anaconda3/bin:$PATH"
 
 . /Users/cgm616/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+if [ -d "$HOME/.pyenv" ]; then
+  if [ -d "$HOME/.pyenv/bin" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+  else
+    export PATH="$HOME/.pyenv/shims:$PATH"
+  fi
+  if command -v pyenv >/dev/null 2>&1; then
+    eval "$(pyenv init - --no-rehash)"
+  fi
+fi
+
+export RUSTC_WRAPPER=sccache
+
+export PATH=$PATH:/Applications/calibre.app/Contents/MacOS
